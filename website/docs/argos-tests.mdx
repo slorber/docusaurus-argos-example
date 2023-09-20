@@ -1,0 +1,39 @@
+---
+sidebar_position: 2
+---
+
+# Argos tests
+
+This page presents examples of things that are likely to change between MDX v1 and v2.
+
+Argos should report these cases when you upgrade.
+
+## Remark-directives
+
+In MDX v2, syntax such as `:xyz` is now interpreted as a [Markdown directive](https://github.com/remarkjs/remark-directive).
+
+You'll need to escape the `:` if you really want Docusaurus to display `:xyz`, see the difference:
+
+- Without escaping :xyz
+- With escaping: \:xyz
+
+## Extra paragraphs
+
+In MDX v2, JSX line breaks are more likely to create extra paragraphs.
+
+```html title="MDX example"
+<div style={{ border: "solid" }}>abc</div>
+
+<div style={{ border: "solid" }}>
+  def
+</div>
+```
+
+See for example how this is rendered:
+
+<div style={{ border: "solid" }}>abc</div>
+
+<!-- prettier-ignore -->
+<div style={{ border: "solid" }}>
+  def
+</div>
