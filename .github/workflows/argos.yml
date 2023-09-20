@@ -32,8 +32,7 @@ jobs:
         run: yarn workspace website build
 
       - name: Take Argos screenshots
-        run: yarn screenshot
+        run: yarn workspace argos screenshot
 
       - name: Upload Argos screenshots
-        continue-on-error: true
-        run: yarn argos:upload
+        run: yarn workspace argos upload
